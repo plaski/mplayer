@@ -1,0 +1,127 @@
+.list-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 350px;
+  transition: all 0.5s ease-in-out;
+}
+
+.songs-container {
+  margin-top: 10px;
+  border-top: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.list {
+  list-style: none;
+  padding: 25px 0;
+  margin: 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  &__item {
+    text-align: center;
+    cursor: pointer;
+    padding: 15px 30px;
+    transition: 0.25s ease;
+  }
+}
+
+.song {
+  &__title {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+
+    &--current {
+      margin-bottom: 5px;
+      margin-top: 15px;
+    }
+  }
+
+  &__artist {
+    display: block;
+    font-weight: 300;
+    font-size: 12px;
+  }
+
+  &__time {
+    font-weight: 400;
+    font-size: 42px;
+    cursor: pointer;
+  }
+}
+
+.list__item:hover, .selected {
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 30px 5px rgba(0, 0, 0, 1);
+}
+
+.icon-container {
+  text-align: center;
+}
+
+.progress-bar {
+  height: 20px;
+  position: relative;
+}
+
+.input-range {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  background: transparent;
+  -webkit-appearance: none;
+  outline: none;
+  position: absolute;
+  z-index: 0;
+
+  &.draged.input-range::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.input-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  background: var(--primary-color);
+  z-index: 1;
+  border: none;
+  border-radius: 3px;
+}
+
+.input-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  transform: translateY(-9px);
+  transition: all 0.2s;
+  z-index: 3;
+}
+
+.bar-fill {
+  display: block;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  width: 0%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.time-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.time {
+  font-size: 11px;
+}
